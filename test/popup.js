@@ -11,5 +11,9 @@ document.getElementById("btn").addEventListener("click", async () => {
 
 function onRun() {
     //背景の色を変更する。
-    document.body.style.backgroundColor = "#fcc";
+    //document.body.style.backgroundColor = "#fcc";
+
+    chrome.storage.sync.get(null, (options) => {
+        document.body.style.backgroundColor = options.colorValue;
+    });
 }
