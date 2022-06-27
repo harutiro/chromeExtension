@@ -3,11 +3,8 @@
     "description": "My Extension",
     "version": "1.0",
     "manifest_version": 3,
-
     "permissions": ["activeTab", "scripting" , "storage"],
-
     "options_page": "options.html",
-
     "action": {
         "default_popup": "popup.html",
         "default_icon": "icon.png"
@@ -20,5 +17,11 @@
             },
             "description": "Run extension."
         }
-    }
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://twitter.com/*"],
+          "js": ["twitter.js"]
+        }
+      ]
 }
